@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Summarizer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Summarizer</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-progress-bar *ngIf="isLoading$ | async" type="indeterminate"></ion-progress-bar>
+
+  <ion-textarea
+    #textarea
+    [disabled]="isLoading$ | async"
+    label="Текст для обработки"
+    labelPlacement="floating"
+    [autoGrow]="true"
+    placeholder="Введите текст для обработки"
+  ></ion-textarea>
+
+  <ion-progress-bar *ngIf="isLoading$ | async" type="indeterminate"></ion-progress-bar>
+
+  <ion-button
+    [disabled]="(isLoading$ | async) || textarea.value?.length === 0"
+    (click)="summarize(textarea.value || '')"
+    expand="block"
+  >Сократить
+  </ion-button>
+
+  <ion-text>
+    {{result$ | async}}
+  </ion-text>
+
+</ion-content>

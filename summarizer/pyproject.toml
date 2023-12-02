@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "hw3"
+name = "summarizer"
 version = "0.1.0"
 description = ""
 authors = ["Igor Inozemtsev <inozemtsev.iv@gmail.com>"]
