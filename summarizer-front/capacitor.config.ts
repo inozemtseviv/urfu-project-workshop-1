@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'summarizer-front',
+  appId: 'io.ionic.summarizer',
+  appName: 'summarizer',
   webDir: 'www',
   server: {
     androidScheme: 'https'
