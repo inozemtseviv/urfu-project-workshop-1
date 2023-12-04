@@ -34,8 +34,13 @@
   >Сократить
   </ion-button>
 
-  <ion-text>
-    {{result$ | async}}
-  </ion-text>
+  <ion-card *ngIf="result$ | async as result">
+    <ion-card-header>
+      <ion-card-title>Результат сокращения</ion-card-title>
+    </ion-card-header>
 
+    <ion-card-content>
+      {{result}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

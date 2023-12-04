@@ -4,6 +4,7 @@
 ---
 
 ### [Описание проекта](docs/project-description.md)
+### [Фронтенд и мобильное приложение](summarizer-front/README.md)
 
 ---
 
@@ -13,7 +14,21 @@
 
 ## Использование
 
-// TODO: примеры использования
+1. Введи текст для обработки.
+1. Нажми `Сократить`.
+1. Используй результат!
+
+### Веб-приложение
+![](docs/assets/web-01.png)
+![](docs/assets/web-02.png)
+![](docs/assets/web-03.png)
+
+### Android-приложение
+![](docs/assets/android.png)
+
+### iOS-приложение
+![](docs/assets/ios.png)
+
 
 ## Команда
 
