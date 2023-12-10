@@ -20,6 +20,13 @@
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
+Для корректной работы приложения необходимо задать данным переменным значения в
+файле [docker-compose.yml](deployment/docker-compose.yml) для сервиса `back`:
+
+- `SUMMARIZER_TYPE` - `remote` или `local`. Определяет, какой сервис использовать: запускать модель локально или с
+  помощью http-запроса к API huggingface;
+- `API_TOKEN` - токен, полученный в huggingface.
+
 Запуск приложения в Docker
 
 ```shell
