@@ -5,6 +5,7 @@ from app.services.base_summarizer_service import BaseSummarizerService
 
 class RemoteSummarizerService(BaseSummarizerService):
     def __init__(self, api_token):
+        # Подготовка сервиса к работе: сохранение токена и урла модели
         self.api_token = api_token
         self.api_url = "https://api-inference.huggingface.co/models/IlyaGusev/mbart_ru_sum_gazeta"
 
