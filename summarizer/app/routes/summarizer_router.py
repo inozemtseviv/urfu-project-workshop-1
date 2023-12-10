@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 from app.models import SummarizerRequest, SummarizerResponse
-from app.services.summarizer_service import SummarizerService
+from app.services.base_summarizer_service import BaseSummarizerService
 
 
-def get_router(summarizer: SummarizerService):
+def get_router(summarizer: BaseSummarizerService):
     router = APIRouter()
 
     @router.post("/summarize")

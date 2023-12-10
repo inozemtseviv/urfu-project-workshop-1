@@ -1,8 +1,13 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
 
 from app.routes.summarizer_router import get_router
-from app.services.summarizer_service import SummarizerService
+from app.services.local_summarizer_service import LocalSummarizerService
+from app.services.remote_summarizer_service import RemoteSummarizerService
+
+load_dotenv()
 
 app = FastAPI()
 origins = ["*"]
@@ -14,5 +19,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-summarizer = SummarizerService()
+summarizer_type = os.getenv("SUMMARIZER_TYPE", "remote")
+if summarizer_type == "remote":
+    summarizer = RemoteSummarizerService(os.getenv("API_TOKEN", ""))
+else:
+    summarizer = LocalSummarizerService()
+
 app.include_router(get_router(summarizer))

@@ -13,6 +13,7 @@ torch = "^2.1.1"
 torchvision = "^0.16.1"
 transformers = "^4.35.2"
 sentencepiece = "^0.1.99"
+python-dotenv = "^1.0.0"
 
 
 [build-system]
