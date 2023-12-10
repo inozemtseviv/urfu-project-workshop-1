@@ -1,16 +1,38 @@
 # Короткий пересказ текста
-УрФУ: Проектный практикум 20.11.2023-17.12.2023
+
+УрФУ: Проектный практикум
 
 ---
 
 ### [Описание проекта](docs/project-description.md)
+
+### [API](summarizer/README.md)
+
 ### [Фронтенд и мобильное приложение](summarizer-front/README.md)
 
 ---
 
 ## Начало работы
 
-// TODO: Информация о зависимостях и запуске
+Для работы требуется:
+
+- утилита [make](https://www.gnu.org/software/make/)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+
+Запуск приложения в Docker
+
+```shell
+make up
+```
+
+Остановка контейнеров
+
+```shell
+make down
+```
+
+По умолчанию сервис доступен по адресу http://localhost/main
 
 ## Использование
 
@@ -19,16 +41,18 @@
 1. Используй результат!
 
 ### Веб-приложение
+
 ![](docs/assets/web-01.png)
 ![](docs/assets/web-02.png)
 ![](docs/assets/web-03.png)
 
 ### Android-приложение
+
 ![](docs/assets/android.png)
 
 ### iOS-приложение
-![](docs/assets/ios.png)
 
+![](docs/assets/ios.png)
 
 ## Команда
 

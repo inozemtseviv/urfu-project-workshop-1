@@ -1,0 +1,44 @@
+version: '3'
+
+networks:
+  app:
+    driver: bridge
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: nginx-conf/Dockerfile
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - back
+    depends_on:
+      - back
+    networks:
+      - app
+
+  back:
+    build:
+      context: ../summarizer
+      dockerfile: ./Dockerfile
+    container_name: back
+    restart: on-failure
+    environment:
+      - API_TOKEN=
+      - SUMMARIZER_TYPE=remote
+    networks:
+      - app
+
+  frontend:
+    build:
+      context: ../summarizer-front
+      dockerfile: ./Dockerfile
+    container_name: summarizer-front
+    restart: on-failure
+    networks:
+      - app
